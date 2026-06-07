@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gopal Narayan Srivastava</title>
+  <meta name="author" content="Gopal Narayan Srivastava" />
+  <meta name="description" content="PhD in Biological Sciences @ Louisiana State University. Computational Biology, Machine Learning, Cheminformatics." />
+	
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=1" />
+  <link rel="apple-touch-icon" href="/favicon.png?v=1" />
+	
+	<meta name="theme-color" content="#1565c0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #1565c0;
+      --primary-light: #1976d2;
+      --primary-dark: #0d47a1;
+      --bg: #fff;
+      --bg-alt: #f7f7f7;
+      --text: #2b2b2b;
+      --text-light: #555;
+      --text-muted: #606060;
+      --border: #ccc;
+      --link: #1565c0;
+      --link-hover: #efbf04;
+      --sidebar-width: 300px;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--link-hover); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--primary-dark);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      color: #fff;
+      font-weight: 700;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    .nav-links { list-style: none; display: flex; gap: 4px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.99);
+      font-size: 17px;
+      font-weight: 400;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,0.12); color: #fff; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px 0; transition: 0.3s; }
+
+    /* ── HERO / ABOUT ── */
+    .hero {
+      padding-top: 50px;
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: var(--sidebar-width);
+      flex-shrink: 0;
+      background: var(--bg-alt);
+      padding: 60px 32px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .avatar {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .sidebar h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .sidebar .role {
+      font-size: 17px;
+      color: var(--text-light);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    .sidebar .affiliation a {
+      font-size: 17px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    .sidebar-divider {
+      width: 100px;
+      height: 3px;
+      background: var(--border);
+      margin: 24px 0;
+    }
+    .sidebar-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+    }
+    .sidebar-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: var(--primary);
+      font-size: 18px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .sidebar-links a:hover {
+      background: var(--text);
+      color: #fff;
+    }
+    .sidebar-interests {
+      margin-top: 28px;
+      text-align: left;
+      width: 100%;
+    }
+    .sidebar-interests h3 {
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .sidebar-interests ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .sidebar-interests li {
+      font-size: 15px;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sidebar-interests li i {
+      color: var(--primary);
+      font-size: 11px;
+      width: 14px;
+      text-align: center;
+    }
+    .sidebar-education {
+      margin-top: 24px;
+      text-align: left;
+      width: 100%;
+    }
+    .sidebar-education h3 {
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .sidebar-education ul { list-style: none; }
+    .sidebar-education li {
+      font-size: 15px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .sidebar-education li i {
+      color: var(--primary);
+      font-size: 15px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .sidebar-education .edu-degree { font-weight: 700; color: var(--text); }
+    .sidebar-education .edu-school { font-size: 15px; }
+
+    /* ── MAIN CONTENT ── */
+    .main {
+      flex: 1;
+      min-width: 0;
+      padding: 60px 48px 80px;
+      max-width: 820px;
+    }
+    .main h2.welcome {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    .bio {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+    .bio p { margin-bottom: 16px; }
+    .bio a { font-weight: 700; }
+    .bio strong { font-weight: 700; }
+    .reviewer-note {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 48px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-header h2 {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--text);
+    }
+    .section-alt { background: var(--bg-alt); }
+
+    /* ── PROJECTS / RESEARCH ── */
+    .project-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .project-filters button {
+      padding: 6px 16px;
+      border: none;
+      background: transparent;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: var(--text-light);
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 400;
+      transition: all 0.2s;
+    }
+    .project-filters button.active,
+    .project-filters button:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    .project-thumb {
+      height: 180px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.8);
+      font-size: 48px;
+    }
+    .project-body { padding: 20px; }
+    .project-body h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .project-body h3 a { color: var(--text); }
+    .project-body h3 a:hover { color: var(--primary); }
+    .project-body p {
+      font-size: 13.5px;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .project-links { display: flex; gap: 10px; }
+    .project-links a {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; gap: 0; }
+    .pub-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-title-text {
+      font-size: 15.5px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    .pub-title-text a { color: var(--primary); }
+    .pub-title-text a:hover { text-decoration: underline; }
+    .pub-authors {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+    .pub-authors strong { color: var(--text); font-weight: 700; }
+    .pub-venue {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+    .pub-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pub-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .pub-badge:hover { opacity: 0.85; }
+    .pub-badge.pdf { background: #d32f2f; color: #fff; }
+    .pub-badge.doi { background: var(--primary); color: #fff; }
+    .pub-badge.equal { background: #e8f5e9; color: #2e7d32; font-weight: 600; }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .skill-group h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-group h3 i { color: var(--primary); font-size: 16px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      font-size: 13px;
+      padding: 4px 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-light);
+    }
+
+    /* ── AWARDS ── */
+    .awards-list { max-width: 700px; margin: 0 auto; }
+    .award-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .award-item:last-child { border-bottom: none; }
+    .award-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #fff3e0;
+      color: #b34000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+    .award-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+    .award-item p { font-size: 13px; color: var(--text-muted); }
+
+    /* ── CERTIFICATES ── */
+    .cert-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .cert-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px;
+      background: var(--bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .cert-item:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .cert-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #e3f2fd;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+    .cert-content h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .cert-content .cert-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .cert-content .cert-links {
+      display: flex;
+      gap: 12px;
+    }
+    .cert-content .cert-links a {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .cert-content .cert-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .contact-item i {
+      font-size: 20px;
+      color: var(--primary);
+      margin-top: 2px;
+      width: 24px;
+      text-align: center;
+    }
+    .contact-item a, .contact-item span {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; }
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 48px 24px 32px;
+      }
+      .main { padding: 40px 24px 60px; max-width: 100%; }
+      .section { padding: 50px 24px; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0; right: 0;
+        background: var(--primary-dark);
+        padding: 12px 24px 20px;
+        gap: 2px;
+      }
+      .nav-links.open a { padding: 10px 14px; }
+      .hamburger { display: block; }
+      .project-grid { grid-template-columns: 1fr; }
+      .cert-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Gopal Narayan Srivastava</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO / ABOUT ═══ -->
+<section class="hero" id="about">
+  <aside class="sidebar">
+    <img src="profile.png" alt="Gopal Narayan Srivastava" class="avatar" />
+    <h1>Gopal Narayan Srivastava</h1>
+    <div class="role">PhD Candidate in Biological Sciences</div>
+    <div class="affiliation">
+      <a href="https://www.lsu.edu/science/biosci/" target="_blank">Louisiana State University</a>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-links">
+      <a href="mailto:gsriva2@lsu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://scholar.google.com/citations?user=N_gpB7YAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+      <a href="https://www.linkedin.com/in/gopal-narayan-srivastava/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/gnsrivastava" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.researchgate.net/profile/Gopal-Srivastava-2" target="_blank" title="ResearchGate"><i class="ai ai-researchgate"></i></a>
+      <a href="https://orcid.org/0009-0006-4045-7971" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a>
+    </div>
+
+    <div class="sidebar-interests">
+      <h3>Interests</h3>
+      <ul>
+        <li><i class="fas fa-chevron-right"></i> Computational Biology</li>
+        <li><i class="fas fa-chevron-right"></i> Machine Learning &amp; Graph Neural Networks</li>
+        <li><i class="fas fa-chevron-right"></i> Cheminformatics</li>
+        <li><i class="fas fa-chevron-right"></i> Drug Discovery</li>
+        <li><i class="fas fa-chevron-right"></i> Gut Microbiome Metabolism &amp; Disease Relation</li>
+        <li><i class="fas fa-chevron-right"></i> Large Language Models for Biology</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-education">
+      <h3>Education</h3>
+      <ul>
+        <li>
+          <i class="fas fa-graduation-cap"></i>
+          <div>
+            <div class="edu-degree">PhD in Biological Sciences, 2026</div>
+            <div class="edu-school">Louisiana State University</div>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-graduation-cap"></i>
+          <div>
+            <div class="edu-degree">MS in Chemistry, 2020</div>
+            <div class="edu-school">The Ohio State University</div>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-graduation-cap"></i>
+          <div>
+            <div class="edu-degree">BS-MS in Chemistry, 2017</div>
+            <div class="edu-school">IISER Bhopal, India</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <div class="main">
+    <h2 class="welcome">Welcome!</h2>
+    <div class="bio">
+      <p>I'm a <a href="https://www.lsu.edu/science/biosci/index.php" target="_blank">Biological Sciences</a> PhD at <strong> Louisiana State University</strong>, where I develop machine learning frameworks to understand complex biological systems at the intersection of computational biology, cheminformatics, and drug discovery.</p>
+
+      <p>My research focuses on building data-driven approaches to elucidate <strong>bacteria–metabolite interactions in the human gut microbiome</strong>, leveraging enzyme encodings and metabolite structural embeddings across various mammalian gut bacterial species. A significant part of my work involves designing <strong> data analysis approaches and graph neural network (GNN) models</strong> to predict gut bacteria metabolism, synergistic anticancer drug combinations, enhanced by novel data augmentation strategies. I have also created biopython based data curation and cleaning pipelines for to projects related to ligand-binding site classification.</p>
+
+      <p>At LSU, I am fortunate to be mentored by <a href="https://www.brylinski.org" target="_blank">Dr. Michal Brylinski</a>. My academic journey includes a BS-MS Dual Degree in Chemistry from the <a href="https://www.iiserb.ac.in" target="_blank">Indian Institute of Science Education and Research Bhopal</a>, where I developed cheminformatics tools for toxicity prediction and biofilm-inhibitory molecule classification, and an MS in Chemistry from <a href="https://www.osu.edu" target="_blank">The Ohio State University</a> where I worked on deep neural network based prediction of newtonian forces on the dipeptide atoms calculated using MD trajectories.</p>
+
+      <p>I've also worked as a Research Associate at the <a href="https://aggrc.com" target="_blank">Aquatic Germplasm and Genetic Resources Center</a>, where I developed high-performance image classification tools using YOLOv10b with 96% accuracy to classify the fertilized embryos from unfertilized eggs in <i>Xenopus laevis</i>. Currently, I am exploring <strong>LLM-based approaches for binding affinity prediction &amp; antibiotic resistance modeling in microbes</strong>.</p>
+
+      <p>I'm always open to discussing computational biology, new research, or potential collaborations. Feel free to explore my <a href="#publications">Publications</a>, or connect with me on <a href="https://www.linkedin.com/in/gopal-narayan-srivastava/" target="_blank">LinkedIn</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<div class="section-alt">
+  <section class="section" id="projects">
+    <div class="section-header"><h2>Projects</h2></div>
+
+    <div class="project-filters">
+      <button class="active" onclick="filterProjects('all', this)">All</button>
+      <button onclick="filterProjects('ml', this)">Machine Learning</button>
+      <button onclick="filterProjects('bio', this)">Biology</button>
+      <button onclick="filterProjects('chemo', this)">Cheminformatics</button>
+      <button onclick="filterProjects('cv', this)">Computer Vision</button>
+    </div>
+
+    <div class="project-grid" id="projectGrid">
+
+      <div class="project-card" data-tags="ml bio">
+        <div class="project-thumb"><i class="fas fa-bacterium"></i></div>
+        <div class="project-body">
+          <h3><a href="https://doi.org/10.3390/nu17030469" target="_blank">Gut Microbiome Metabolite Prediction</a></h3>
+          <p>ML pipeline using Random Forest &amp; KNN to predict gut microbial metabolism across 312 species and 154 metabolites — 74% consumption and 95% production accuracy.</p>
+          <div class="project-links">
+            <a href="https://doi.org/10.3390/nu17030469" target="_blank"><i class="fas fa-file-alt"></i> Paper</a>
+            <a href="https://github.com/gnsrivastava" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="ml bio">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#7b1fa2,#ce93d8)"><i class="fas fa-pills"></i></div>
+        <div class="project-body">
+          <h3><a href="https://doi.org/10.1038/s41598-024-51940-9" target="_blank">Data Augmentation: Anticancer Drug Synergy</a></h3>
+          <p>Augmented drug combination dataset to improve the performance of machine learning models predicting synergistic anticancer effects.</p>
+          <div class="project-links">
+            <a href="https://www.nature.com/articles/s41598-024-51940-9" target="_blank"><i class="fas fa-file-alt"></i> Paper</a>
+            <a href="https://github.com/MengLiu90/Synergy-Data-Augmentation" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="ml bio">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#7b1fa2,#ce93d8)"><i class="fas fa-pills"></i></div>
+        <div class="project-body">
+          <h3><a href="https://doi.org/10.3390/biom14030253" target="_blank">SynerGNet: Anticancer Drug Synergy</a></h3>
+          <p>Graph Neural Network model to predict synergistic anticancer drug pairs across 5 cancer types, with a data augmentation pipeline increasing dataset by 62.5%.</p>
+          <div class="project-links">
+            <a href="https://doi.org/10.3390/biom14030253" target="_blank"><i class="fas fa-file-alt"></i> Paper</a>
+            <a href="https://github.com/MengLiu90/Analysis_for_Synergy_Data_Augmentation" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="ml bio">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#00695c,#4db6ac)"><i class="fas fa-dna"></i></div>
+        <div class="project-body">
+          <h3><a href="https://doi.org/10.3390/biom12081053" target="_blank">GraphSite</a></h3>
+          <p>Deep graph learning for ligand binding site classification and encoder-decoder neural network for target-based drug design on ~51,677 protein-ligand complexes.</p>
+          <div class="project-links">
+            <a href="https://doi.org/10.3389/fphar.2022.837715" target="_blank"><i class="fas fa-file-alt"></i> Paper</a>
+            <a href="https://github.com/shiwentao00/Graphsite-classifier" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="cv ml">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#e65100,#ffb74d)"><i class="fas fa-frog"></i></div>
+        <div class="project-body">
+          <h3><i>Xenopus laevis</i>:Egg Fertilization Classification</h3>
+          <p>PyQt6 macOS app using YOLOv10b for high-performance image classification with 96% accuracy, processing 20-image batches in under 5 minutes.</p>
+          <div class="project-links">
+            <a href="https://github.com/mpande2/EmbryoDetection" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="chemo ml">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#283593,#7986cb)"><i class="fas fa-atom"></i></div>
+        <div class="project-body">
+          <h3><a href="https://doi.org/10.1016/j.ygeno.2019.07.026" target="_blank">Molib: Biofilm Inhibitor Classifier</a></h3>
+          <p>R-based ML classifier for predicting biofilm-inhibitory molecules using Random Forest and molecular descriptors — 93.9% accuracy.</p>
+          <div class="project-links">
+            <a href="https://doi.org/10.1016/j.ygeno.2019.07.026" target="_blank"><i class="fas fa-file-alt"></i> Paper</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-tags="chemo ml">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#bf360c,#ff8a65)"><i class="fas fa-skull-crossbones"></i></div>
+        <div class="project-body">
+          <h3><a href="https://doi.org/10.3389/fphar.2017.00880" target="_blank">ToxiM: Toxicity Prediction Tool</a></h3>
+          <p>R-based random forest model utilizing cheminformatics approaches for toxicity prediction of small molecules along with solubility and permeability models.</p>
+          <div class="project-links">
+            <a href="https://doi.org/10.3389/fphar.2017.00880" target="_blank"><i class="fas fa-file-alt"></i> Paper</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ═══ PUBLICATIONS ═══ -->
+<section class="section" id="publications">
+  <div class="section-header"><h2>Publications</h2></div>
+
+  <div class="pub-list">
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.3390/nu17030469" target="_blank">A Data-Driven Approach to Enhance the Prediction of Bacteria–Metabolite Interactions in the Human Gut Microbiome Using Enzyme Encodings and Metabolite Structural Embeddings</a></div>
+      <div class="pub-authors"><strong>Srivastava, G.</strong>; Brylinski, M.</div>
+      <div class="pub-venue">Nutrients 17(3), 469, 2025</div>
+      <div class="pub-badges"><a class="pub-badge doi" href="https://doi.org/10.3390/nu17030469" target="_blank"><i class="fas fa-link"></i> DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.1007/978-1-0716-4196-5_5" target="_blank">Machine Learning Techniques to Infer Protein Structure and Function from Sequences: A Comprehensive Review</a></div>
+      <div class="pub-authors"><strong>Srivastava, G.</strong>; Liu, M.; Ni, X.; Pu, L.; Brylinski, M.</div>
+      <div class="pub-venue">Prediction of Protein Secondary Structure, 79–104, 2024</div>
+      <div class="pub-badges"><a class="pub-badge doi" href="https://doi.org/10.1007/978-1-0716-4196-5_5" target="_blank"><i class="fas fa-link"></i> DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.3390/make6031782" target="_blank">Insights from Augmented Data Integration and Strong Regularization in Drug Synergy Prediction with SynerGNet</a></div>
+      <div class="pub-authors">Liu, M.; <strong>Srivastava, G.</strong>; Ramanujam, J.; Brylinski, M.</div>
+      <div class="pub-venue">Machine Learning and Knowledge Extraction, 6(3), 1782–1797, 2024</div>
+      <div class="pub-badges"><a class="pub-badge doi" href="https://doi.org/10.3390/make6031782" target="_blank"><i class="fas fa-link"></i> DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.3390/biom14030253" target="_blank">SynerGNet: A Graph Neural Network Model to Predict Anticancer Drug Synergy</a></div>
+      <div class="pub-authors">Liu, M.<sup>#</sup>; <strong>Srivastava, G.<sup>#</sup></strong>; Ramanujam, J.; Brylinski, M.</div>
+      <div class="pub-venue">Biomolecules 14(3), 253, 2024</div>
+      <div class="pub-badges">
+        <a class="pub-badge doi" href="https://doi.org/10.3390/biom14030253" target="_blank"><i class="fas fa-link"></i> DOI</a>
+        <span class="pub-badge equal"><i class="fas fa-equals"></i> Equal Contribution</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.1038/s41598-024-51455-3" target="_blank">Augmented Drug Combination Dataset to Improve the Performance of Machine Learning Models Predicting Synergistic Anticancer Effects</a></div>
+      <div class="pub-authors">Liu, M.<sup>#</sup>; <strong>Srivastava, G.<sup>#</sup></strong>; Ramanujam, J.; Brylinski, M.</div>
+      <div class="pub-venue">Scientific Reports 14(1), 1668, 2024</div>
+      <div class="pub-badges">
+        <a class="pub-badge doi" href="https://doi.org/10.1038/s41598-024-51455-3" target="_blank"><i class="fas fa-link"></i> DOI</a>
+        <span class="pub-badge equal"><i class="fas fa-equals"></i> Equal Contribution</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.3390/cancers15164050" target="_blank">Unlocking the Potential of Kinase Targets in Cancer: Insights from CancerOmicsNet</a></div>
+      <div class="pub-authors">Singha, M.; Pu, L.; <strong>Srivastava, G.</strong>; Ni, X.; et al.</div>
+      <div class="pub-venue">Cancers 15(16), 4050, 2023</div>
+      <div class="pub-badges"><a class="pub-badge doi" href="https://doi.org/10.3390/cancers15164050" target="_blank"><i class="fas fa-link"></i> DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.1016/j.jmb.2023.168056" target="_blank">GutBug: A Tool for Prediction of Human Gut Bacteria Mediated Biotransformation</a></div>
+      <div class="pub-authors">Malwe, A.S.; <strong>Srivastava, G.N.</strong>; Sharma, V.K.</div>
+      <div class="pub-venue">Journal of Molecular Biology 435(14), 168056, 2023</div>
+      <div class="pub-badges"><a class="pub-badge doi" href="https://doi.org/10.1016/j.jmb.2023.168056" target="_blank"><i class="fas fa-link"></i> DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.3389/fphar.2022.837715" target="_blank">Pocket2Drug: An Encoder-Decoder Deep Neural Network for Target-Based Drug Design</a></div>
+      <div class="pub-authors">Shi, W.; Singha, M.; Pu, L.; <strong>Srivastava, G.</strong>; Ramanujam, J.; Brylinski, M.</div>
+      <div class="pub-venue">Frontiers in Pharmacology 13, 837715, 2022</div>
+      <div class="pub-badges"><a class="pub-badge doi" href="https://doi.org/10.3389/fphar.2022.837715" target="_blank"><i class="fas fa-link"></i> DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.3390/biom12081053" target="_blank">GraphSite: Ligand Binding Site Classification with Deep Graph Learning</a></div>
+      <div class="pub-authors">Shi, W.; Singha, M.; Pu, L.; <strong>Srivastava, G.</strong>; Ramanujam, J.; Brylinski, M.</div>
+      <div class="pub-venue">Biomolecules 12(8), 1053, 2022</div>
+      <div class="pub-badges"><a class="pub-badge doi" href="https://doi.org/10.3390/biom12081053" target="_blank"><i class="fas fa-link"></i> DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.1186/s12859-022-05061-7" target="_blank">MP4: A Machine Learning Based Classification Tool for Pathogenic Proteins</a></div>
+      <div class="pub-authors">Gupta, A.; Malwe, A.S.; <strong>Srivastava, G.N.</strong>; et al.</div>
+      <div class="pub-venue">BMC Bioinformatics 23(1), 507, 2022</div>
+      <div class="pub-badges"><a class="pub-badge doi" href="https://doi.org/10.1186/s12859-022-05061-7" target="_blank"><i class="fas fa-link"></i> DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.1016/j.ygeno.2019.07.026" target="_blank">Molib: A Machine Learning Based Classification Tool for the Prediction of Biofilm Inhibitory Molecules</a></div>
+      <div class="pub-authors"><strong>Srivastava, G.N.</strong>; Malwe, A.S.; Sharma, A.K.; Shastri, V.; Hibare, K.; Sharma, V.K.</div>
+      <div class="pub-venue">Genomics 112(4), 2823–2832, 2020</div>
+      <div class="pub-badges"><a class="pub-badge doi" href="https://doi.org/10.1016/j.ygeno.2019.07.026" target="_blank"><i class="fas fa-link"></i> DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.1002/jcb.26422" target="_blank">Mechanistic and Structural Insight into Promiscuity-Based Metabolism of Cardiac Drug Digoxin by Gut Microbial Enzyme</a></div>
+      <div class="pub-authors">Kumar, K.; Jaiswal, S.K.; Dhoke, G.V.; <strong>Srivastava, G.N.</strong>; et al.</div>
+      <div class="pub-venue">Journal of Cellular Biochemistry 119(7), 5287–5296, 2018</div>
+      <div class="pub-badges"><a class="pub-badge doi" href="https://doi.org/10.1002/jcb.26422" target="_blank"><i class="fas fa-link"></i> DOI</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title-text"><a href="https://doi.org/10.3389/fphar.2017.00880" target="_blank">ToxiM: A Toxicity Prediction Tool for Small Molecules Developed Using Machine Learning and Chemoinformatics Approaches</a></div>
+      <div class="pub-authors">Sharma, A.K.<sup>#</sup>; <strong>Srivastava, G.N.<sup>#</sup></strong>; Roy, A.; Sharma, V.K.</div>
+      <div class="pub-venue">Frontiers in Pharmacology 8, 880, 2017</div>
+      <div class="pub-badges">
+        <a class="pub-badge doi" href="https://doi.org/10.3389/fphar.2017.00880" target="_blank"><i class="fas fa-link"></i> DOI</a>
+        <span class="pub-badge equal"><i class="fas fa-equals"></i> Equal Contribution</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<div class="section-alt">
+  <section class="section" id="skills">
+    <div class="section-header"><h2>Skills &amp; Tools</h2></div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3><i class="fas fa-brain"></i> ML, AI &amp; Data Science</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Graph Neural Networks</span>
+          <span class="skill-tag">Random Forest</span>
+          <span class="skill-tag">SVM</span>
+          <span class="skill-tag">XGBoost</span>
+          <span class="skill-tag">CNNs</span>
+          <span class="skill-tag">YOLOv10</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><i class="fas fa-code"></i> Programming</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">R</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">PyTorch Geometric</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Keras</span>
+          <span class="skill-tag">Scikit-Learn</span>
+          <span class="skill-tag">HPC (SLURM)</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">SciPy</span>
+          <span class="skill-tag">PyQt6</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><i class="fas fa-dna"></i> Bioinformatics &amp; Cheminformatics</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">BioPython</span>
+          <span class="skill-tag">BLAST</span>
+          <span class="skill-tag">AlphaFold</span>
+          <span class="skill-tag">DeSeq2</span>
+          <span class="skill-tag">FastQC</span>
+          <span class="skill-tag">Trimmomatic</span>
+          <span class="skill-tag">Samtools</span>
+          <span class="skill-tag">BCFTools</span>
+          <span class="skill-tag">ChemBERTa</span>
+          <span class="skill-tag">RDKit</span>
+          <span class="skill-tag">OpenBabel</span>
+          <span class="skill-tag">Mol2Vec</span>
+          <span class="skill-tag">PadeL</span>
+          <span class="skill-tag">Datamol</span>
+          <span class="skill-tag">ChimeraX</span>
+          <span class="skill-tag">ChemDraw</span>
+          <span class="skill-tag">PDBTools</span>
+          <span class="skill-tag">Fpocket</span>
+          <span class="skill-tag">ProtLLM</span>
+          <span class="skill-tag">CompareM</span>
+          <span class="skill-tag">Diamond</span>
+          <span class="skill-tag">GROMACS: MD Simulations</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ AWARDS ═══ -->
+<section class="section" id="awards">
+  <div class="section-header"><h2>Awards &amp; Honors</h2></div>
+  <div class="awards-list">
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-trophy"></i></div>
+      <div>
+        <h3>Dr. Richard Bruch Distinguished Graduate Student Scholarship</h3>
+        <p>Pinkie Gordon Lane Graduate School, LSU — $2,500 travel award · Apr 2025</p>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-star"></i></div>
+      <div>
+        <h3>Letter of Appreciation — "Exceeds Expectations"</h3>
+        <p>Dept. of Biological Sciences, LSU — teaching excellence in BIOL 1005 · Dec 2024</p>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-medal"></i></div>
+      <div>
+        <h3>Third Place, Poster Presentation</h3>
+        <p>Biograds Symposium, Louisiana State University · Mar 2024</p>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-award"></i></div>
+      <div>
+        <h3>CREST MHRD Project Fellowship</h3>
+        <p>IISER Bhopal · Jul 2017</p>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-gem"></i></div>
+      <div>
+        <h3>INSPIRE Scholarship, Ministry of Education, Govt of India</h3>
+        <p>Top 1% nationally in science and mathematics · 2012 – 2017</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATES ═══ -->
+<div class="section-alt">
+  <section class="section" id="certificates">
+    <div class="section-header"><h2>Certificates</h2></div>
+    <div class="cert-list">
+
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fab fa-python"></i></div>
+        <div class="cert-content">
+          <h3>CutShort Certified Python — Advanced</h3>
+          <div class="cert-meta">Credential ID: 46281</div>
+          <div class="cert-links">
+            <a href="https://cutshort.io/certificate/46281" target="_blank"><i class="fas fa-external-link-alt"></i> Certificate</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fab fa-python"></i></div>
+        <div class="cert-content">
+          <h3>Python Data Structure</h3>
+          <div class="cert-meta">Coursera · Credential ID: QPXBR3RLGSQG</div>
+          <div class="cert-links">
+            <a href="https://www.coursera.org/account/accomplishments/verify/QPXBR3RLGSQG" target="_blank"><i class="fas fa-external-link-alt"></i> Certificate</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fas fa-brain"></i></div>
+        <div class="cert-content">
+          <h3>Artificial Intelligence Foundations: Machine Learning</h3>
+          <div class="cert-meta">LinkedIn · Credential ID: AS_MDYH1OXWhgYk9yQVtUTJYDT3i</div>
+          <div class="cert-links">
+            <a href="https://drive.google.com/file/d/12MteXvxep9tIEYPM3UWsPxLZ-AGf9uy6/view?usp=sharing" target="_blank"><i class="fas fa-external-link-alt"></i> Certificate</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fab fa-python"></i></div>
+        <div class="cert-content">
+          <h3>Programming for Everybody (Getting Started with Python)</h3>
+          <div class="cert-meta">Coursera · Credential ID: Y2WJJGCVYLJH</div>
+          <div class="cert-links">
+            <a href="https://www.coursera.org/account/accomplishments/certificate/Y2WJJGCVYLJH" target="_blank"><i class="fas fa-external-link-alt"></i> Certificate</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fas fa-code"></i></div>
+        <div class="cert-content">
+          <h3>Introduction to Programming in C</h3>
+          <div class="cert-meta">EICT, IIT Kanpur · Credential ID: 31564-12702-d06a8731226ea8a7</div>
+          <div class="cert-links">
+            <a href="https://drive.google.com/file/d/1Tj0gkMJX97WlvbE46iHurtG6NOIzaY9K/view?usp=sharing" target="_blank"><i class="fas fa-file-alt"></i> Certificate</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fas fa-code"></i></div>
+        <div class="cert-content">
+          <h3>Advanced C Programming</h3>
+          <div class="cert-meta">LinkedIn · Credential ID: AXe_ga1SzruJWxxeUBWlQBZZPakK</div>
+          <div class="cert-links">
+            <a href="https://drive.google.com/file/d/1UbOtF5MGe-Ltmz5JT8Hygh9eX-DiGs5P/view?usp=sharing" target="_blank"><i class="fas fa-external-link-alt"></i> Certificate</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-icon"><i class="fas fa-terminal"></i></div>
+        <div class="cert-content">
+          <h3>Learning Linux Command Line</h3>
+          <div class="cert-meta">LinkedIn · Credential ID: AQniwv8BboKpRsTBjTeKu2N0cqsq</div>
+          <div class="cert-links">
+            <a href="https://drive.google.com/file/d/1wjvdVYYcgl69ZKpLKlZObg_aPcfnxXa7/view?usp=sharing" target="_blank"><i class="fas fa-external-link-alt"></i> Certificate</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<<section class="section" id="contact">
+  <div class="section-header"><h2>Contact</h2></div>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <i class="fas fa-envelope"></i>
+      <div><a href="mailto:gsriva2@lsu.edu">gsriva2@lsu.edu</a></div>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-envelope"></i>
+      <div><a href="mailto:gnsforthestudy@gmail.com">gnsforthestudy@gmail.com</a></div>
+      </div>
+    <div class="contact-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <div><span>Department of Biological Sciences<br/>Louisiana State University<br/>Baton Rouge, LA 70803</span></div>
+    </div>
+    <div class="contact-item">
+      <i class="fab fa-linkedin"></i>
+      <div><a href="https://www.linkedin.com/in/gopal-narayan-srivastava/" target="_blank">Gopal Narayan Srivastava</a></div>
+    </div>
+    <div class="contact-item">
+      <i class="fab fa-github"></i>
+      <div><a href="https://github.com/gnsrivastava" target="_blank">gnsrivastava</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Gopal Narayan Srivastava
+</footer>
+
+<script>
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Project filter
+  function filterProjects(tag, btn) {
+    document.querySelectorAll('.project-filters button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.project-card').forEach(card => {
+      if (tag === 'all' || card.dataset.tags.includes(tag)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
